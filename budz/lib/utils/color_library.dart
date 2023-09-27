@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class ColorLibrary {
   static const themeColor = Color(0xFF2371EE);
+  static const themeColor_100 = Color(0xFFDFFAFD);
 
   static const white = Color(0xffFFFFFF);
   static const background = Color(0xffF0F0F0);

@@ -28,15 +28,15 @@ class PrimaryButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: isDisabled == false ? onTap : null,
       style: ElevatedButton.styleFrom(
-        foregroundColor: ColorLibrary.themeColor,
-        backgroundColor: ColorLibrary.themeColor,
+        foregroundColor: colorButton ?? ColorLibrary.themeColor,
+        backgroundColor: colorButton ?? ColorLibrary.themeColor,
         elevation: 0,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(20),
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 32),
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 32),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -62,14 +62,14 @@ class PrimaryButton extends StatelessWidget {
 class CustomTextButton extends StatelessWidget {
   final BoxFit? fit;
   final String textButton;
-  final Color? colorText;
+  final TextStyle? style;
   TextDecoration? decoration;
   final void Function()? onTap;
 
   CustomTextButton({
     Key? key,
     this.fit,
-    this.colorText,
+    this.style,
     this.decoration,
     required this.onTap,
     required this.textButton,
@@ -77,7 +77,7 @@ class CustomTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     return GestureDetector(
+    return GestureDetector(
       onTap: onTap,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 32),
@@ -86,7 +86,7 @@ class CustomTextButton extends StatelessWidget {
             fit: fit ?? BoxFit.scaleDown,
             child: Text(
               textButton,
-              style: CustomTextStyles.labelButton,
+              style: style ?? CustomTextStyles.labelButton,
             ),
           ),
         ),

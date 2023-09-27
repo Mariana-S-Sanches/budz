@@ -10,7 +10,7 @@ class CustomTextField extends StatelessWidget {
   final Key? textFieldKey;
   final FocusNode? focusNode;
   final void Function()? onTap;
-  final void Function(String)? onChanged;
+  final void Function(String)? onChanged; 
   final FormFieldValidator<String>? validator;
 
   const CustomTextField({

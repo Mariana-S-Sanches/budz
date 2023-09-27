@@ -25,3 +25,21 @@ class UserAccountDataSucessState extends UserAccState {
   @override
   List<Object> get props => [userAcc];
 }
+
+class EditingProfileDataState extends UserAccState {
+  final bool editing;
+
+  EditingProfileDataState(this.editing);
+
+  @override
+  List<Object> get props => [editing];
+}
+
+class DeletingUserAccountState extends UserAccState {
+  final bool deleting;
+
+  DeletingUserAccountState(this.deleting);
+
+  @override
+  List<Object> get props => [deleting];
+}

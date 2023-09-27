@@ -17,7 +17,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<UserAccCubit>(
-      create: (context) => UserAccCubit(doGetUserData: UserDataExternal()),
+      create: (context) => UserAccCubit(
+        doGetUserData: UserDataExternal(),
+        overwriteData: OverwriteData(),
+      ),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

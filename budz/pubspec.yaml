@@ -28,7 +28,7 @@ flutter:
     - assets/logo/
     - assets/icons/
     - assets/images/
-    - fake_back_end/
+    - fake_back_end/back_end.json
   fonts:
     - family: outfit
       fonts:

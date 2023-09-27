@@ -1,14 +1,14 @@
-import 'package:budz/modules/edit_profile_page.dart';
-import 'package:budz/utils/navigator_fade.dart';
-import 'package:budz/utils/strings_library.dart';
 import 'package:flutter/material.dart';
 import 'package:budz/bloc/user_cubit.dart';
 import 'package:budz/bloc/user_state.dart';
 import 'package:budz/utils/text_styles.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:budz/utils/picture_paths.dart';
 import 'package:budz/utils/color_library.dart';
+import 'package:budz/utils/navigator_fade.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:budz/utils/strings_library.dart';
+import 'package:budz/modules/edit_profile_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -27,15 +27,19 @@ class ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<UserAccCubit, UserAccState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+        if (state is EditingProfileDataState) {
+          context.read<UserAccCubit>().getUserData(context);
+        }
+      },
       builder: (context, state) {
-        //UserAccount
         if (state is UserAccountDataSucessState) {
           return Scaffold(
             backgroundColor: ColorLibrary.background,
             appBar: AppBar(
               toolbarHeight: kToolbarHeight + 20,
               backgroundColor: ColorLibrary.white,
+              automaticallyImplyLeading: false,
               title: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: Row(
