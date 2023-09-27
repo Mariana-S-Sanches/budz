@@ -1,0 +1,41 @@
+name: budz
+description: Desafio da Budz.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.6 <4.0.0'
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  dartz: ^0.10.1
+  equatable: ^2.0.5
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.3
+  flutter_svg: ^2.0.7
+  http: ^1.1.0
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/logo/
+    - assets/icons/
+    - assets/images/
+    - fake_back_end/
+  fonts:
+    - family: outfit
+      fonts:
+        - asset: fonts/outfit.ttf
+        - asset: fonts/outfitBold.ttf
+          weight: 200
+        - asset: fonts/outfitLight.ttf
+          weight: 400
+        - asset: fonts/outfitRegular.ttf
+          weight: 600
